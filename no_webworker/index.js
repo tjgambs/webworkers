@@ -9,9 +9,9 @@ class NoWebworker {
     return NoWebworker.fibonacci(num - 1) + NoWebworker.fibonacci(num - 2);
   }
   static calculate() {
-    const num = 40;
     const el = document.getElementById('result');
-    el.innerHTML = '40th fibonacci';
-    el.innerHTML = `40th fibonacci - ${NoWebworker.fibonacci(num)}`;
+    const num = 35 + Math.round(Math.random() * 10);
+    el.innerHTML = `${num} fibonacci`;
+    el.innerHTML = `${num} fibonacci - ${NoWebworker.fibonacci(num)}`;
   }
 }

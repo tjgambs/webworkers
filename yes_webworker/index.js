@@ -5,12 +5,11 @@ class Webworker {
   static calculate() {
     let worker = new Worker("./yes_webworker/worker.js");
     const el = document.getElementById('result');
+    const num = 35 + Math.round(Math.random() * 10);
     worker.onmessage = event => {
-      const num = event.data;
-      el.innerHTML = `40th fibonacci - ${num}`;
+      el.innerHTML = `${num} fibonacci - ${event.data}`;
     };
-    el.innerHTML = '40th fibonacci';
-    const num = 40;
+    el.innerHTML = `${num} fibonacci`;
     worker.postMessage(num);
   };
 }
